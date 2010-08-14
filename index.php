@@ -23,8 +23,26 @@ AudioPlayer.setup("audio/player.swf", {
 
 var current_hash = location.hash;
 
+function SpecialLoad()
+{
+  AjaxRequest.get(
+    {
+      'url':"pago/pago.php",
+      'onSuccess':function(req)
+	{
+	  document.getElementById("content").innerHTML = req.responseText;
+	}
+    }
+  );
+  location.hash = "#viewall";
+  current_hash = location.hash;
+}
 function Load(page)
 {
+  if (page == "viewall") {
+      SpecialLoad();
+      return true;
+  }
   AjaxRequest.get(
     {
       'url':"parse.php?page=" + page,
@@ -47,7 +65,7 @@ function UpdateEq()
 {
   AjaxRequest.get(
     {
-      'url':'genjix.php',
+      'url':'pickeqs.php',
       'onSuccess':function(req)
 	{
 	  var eq = document.getElementById("equalizer").style;
@@ -71,7 +89,7 @@ function Init()
   </script>
 
   <style type="text/css" media="all">
-    @import "181.css";
+    @import "style.css";
   </style>
 </head>
 
@@ -134,7 +152,7 @@ function Init()
       <ul>
 	<li><a href="javascript:NextArticle()" title="View next article. AccessKey: n"><span class="accesskey">n</span>ext article</a>&nbsp;</li>
 	<li><a href="javascript:PreviousArticle()" title="View previous article. AccessKey: p" accesskey="p"><span class="accesskey">p</span>revious article</a></li>
-	<li><a href="about:blank" title="Selection screen of all articles. AccessKey: w" accesskey="w">Vie<span class="accesskey">w</span> All articles</a></li>
+	<li><a href="#viewall" title="Selection screen of all articles. AccessKey: w" accesskey="w">Vie<span class="accesskey">w</span> All articles</a></li>
       </ul>
     </div>
 

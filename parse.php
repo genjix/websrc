@@ -10,6 +10,7 @@ function DoGallery($handle)
     if ($buffer == "")
       break;
     echo preg_replace("/(^.*)\\.(.*)$/", '    <td><a href="\1.\2" target="_blank"><img src="\1_thumb.\2" /></a></td>', $buffer);
+    echo "\n";
     #echo "    <td><img src=\"$buffer\" /></td>\n";
     if ($item >= 1)
     {
