@@ -1,0 +1,32 @@
+pagename
+page summary text
+
+- intro header
+a new paragraph. ! can be added to the start of the first 2 lines for a hidden article such as the faq. all articles need an intro header.
+
+>> trees
+>> poland
+>> thermo
+
+another paragraph. the above are "section jumps". trees will land on the header below.
+{images/image_on_the_left.jpg}
+{Rimages/an_image_on_the_right.png}
+
+yet another paragraph with some *enhanced text* for *emphasis*. blaa blaa yes yes here's a [http://blaa|Link to outside].
+
+- header for new section
+
+[gallery]
+a.jpg
+b.png
+c.jpg
+d.png
+
+Note the empty line.
+
+= trees
+- a labelled section we can jump to from above
+
+A youtube video. Need the embedded link:
+
+http://www.youtube.com/v/djkdkdfjunk
