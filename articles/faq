@@ -2,7 +2,7 @@
 !
 
 -Q. Where is the Source Code for this website?
-A. Source Code is public and can be [http://github.com/genjix/genjix.github.com|browsed here]. It can be downloaded with git by issuing the command
+A. Source Code is public and can be [http://github.com/genjix/websrc|browsed here]. It can be downloaded with git by issuing the command
 
 *git clone ssh://USERNAME,ecksdee@ecksdee.git.sourceforge.net/gitroot/ecksdee/hypatia*.
 -Q. What is your favourite colour? Jamileh from Swansea.
