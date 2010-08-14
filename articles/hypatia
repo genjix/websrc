@@ -1,0 +1,23 @@
+hypatia
+game/performance/live coding
+
+- hypatia live
+{Rimages/hypmini.jpg}
+[http://ecksdee.git.sourceforge.net/git/gitweb.cgi?p=ecksdee/hypatia;a=tree;h=refs/heads/master;hb=master|Hypatia] is a live experience where the performance becomes the game in an environment where music artists and live coder guide the player through a twisting world.
+
+Flying along a track you twist and turn into oncoming ever evolving and convulating attackers. The environment is responding to your actions and you're aware of a controlling invisible sentience. Notes change as you shoot and tempo increases with your speed as you rightly judge to accept the damage and speed past those attackers. Everything pulsates with the music giving an intense experience of synaesthesia as more enemies come at you in a colourful swarm.
+
+A message narrates; "*Mass extinctions came wave after wave*".
+
+[gallery]
+images/hyp.jpg
+
+- technical details
+On other computers people are building a track in blender using splines and pushing it to the game, while also creating the in game music with pure data and live scripting enemies behaviours. Random guy X scripts a new AI using very few lines and adds it to the game while you're playing! a real experience :) The 'narrator' is guiding the coordinators and sending messages to the player in game to tell a story.
+
+- game engine
+The game engine only has components. Maximum flexibility and totally great abstraction handling.
+
+> Components can be nested in trees and their only requirement is to have a list of children. anything can be passed at creation.
+> Signals/slots. If you want to be notified of some event, then add yourself to the slot and when the signal is generated you get notified. Slots can have runlevels, so you can add yourself at 6000 if you know important stuff you need is at a lower runlevel.
+> Bind for passing functions into slots where a different number of arguments is needed. Gives massive flexibility.

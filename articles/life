@@ -1,0 +1,10 @@
+life
+artificial replicators
+
+- lifesuite
+{images/glider_gun.gif}
+In Life, with small changes in initial inputs, you get massively varied forms from this iterative process. Building our bodies is an iterative process, so it's not a stretch to think that we could be the result of cellular automata; a whole selection of forms are offered up and the right one is chosen by natural selection. Natural selection then fine tunes the parameters until it's just right.
+
+This game is called Game of Life; If a black cell has 2 or 3 black neighbors, it stays black. If a black cell has less than 2 or more than 3 black neighbors it becomes white. If a white cell has 3 black neighbors, it becomes black... modelled after the real life phenomena of isolation, overcrowding and reproduction.
+
+[http://github.com/genjix/lifesuite|Life suite] is for running the life game with periodic dumps, an interactive console with popup display, together with a viewer and processing utility.
