@@ -62,8 +62,9 @@ function CheckHash()
 }
 function Jump(name)
 {
+  oldh = location.hash;
   location.hash = "#" + name;
-  current_hash = location.hash;
+  location.hash = oldh;
 }
 
 function UpdateEq()
