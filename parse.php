@@ -26,6 +26,7 @@ $page = $_GET["page"];
 $file = "articles/$page";
 $handle = @fopen($file, "r");
 $title = false;
+$sect_idname = false;
 $descrip = false;
 $utube = "http://www.youtube.com/";
 if ($handle)
@@ -47,10 +48,24 @@ if ($handle)
       $descrip = $buffer;
       //echo "<p>descrip = $descrip</p>";
     }
+    else if (substr($buffer,0,1-strlen($buffer)) == "=")
+    {
+      $sect_idname = trim(substr($buffer, 1));
+    }
+    else if (substr($buffer,0,2-strlen($buffer)) == ">>")
+    {
+      $buffer = trim(substr($buffer, 2));
+      echo "<a class=\"jumplink\" href=\"javascript:Jump('$buffer')\">&gt;&gt; $buffer</a><br />\n";
+    }
     else if (substr($buffer,0,1-strlen($buffer)) == "-")
     {
-      $buffer = substr($buffer, 1);
-      echo "<h3>$buffer</h3>\n";
+      $buffer = trim(substr($buffer, 1));
+      if ($sect_idname != false) {
+          echo "\n<h3 id=\"$sect_idname\">$buffer</h3>\n";
+          $sect_idname = false;
+      }
+      else
+          echo "\n<h3>$buffer</h3>\n";
     }
     else if ($buffer == "[gallery]")
     {

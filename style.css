@@ -111,7 +111,7 @@ div#content h3 {
 	/*text-transform: lowercase;*/
 }
 
-div#content p {
+div#content p, a.jumplink {
 	font-size: 14px;
 	color: #000;
 	line-height: 1.5em;

@@ -60,6 +60,11 @@ function CheckHash()
   if (location.hash != current_hash)
     Load(location.hash.substr(1));
 }
+function Jump(name)
+{
+  location.hash = "#" + name;
+  current_hash = location.hash;
+}
 
 function UpdateEq()
 {
@@ -110,7 +115,7 @@ function Init()
   soundFile: "http://www.fileden.com/files/2009/8/19/2548465/xproj.mp3,http://www.fileden.com/files/2009/8/19/2548465/intro.mp3",
   titles: "X-Project (100% Pure Mix), Paul Hartnoll's intro",
   loop: "yes",
-  autostart: "yes",
+  autostart: "no",
   width: 195,
   initialvolume: 100,
   bg: "ff0066",
