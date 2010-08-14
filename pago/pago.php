@@ -22,6 +22,7 @@ if ($handle = opendir('.'))
         $dir_array[] = $lyric_file;
     }
     closedir($handle);
+    sort($dir_array);
     $step = 0;
     foreach ($dir_array as $file) {
         if ($ext = substr(strrchr($file, '.'), 1) != "jpg") 
