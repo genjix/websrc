@@ -3,6 +3,8 @@ artificial replicators
 
 - lifesuite
 {images/glider_gun.gif}
+Are new ideas discovered, or created?
+
 In Life, with small changes in initial inputs, you get massively varied forms from this iterative process. Building our bodies is an iterative process, so it's not a stretch to think that we could be the result of cellular automata; a whole selection of forms are offered up and the right one is chosen by natural selection. Natural selection then fine tunes the parameters until it's just right.
 
 This game is called Game of Life; If a black cell has 2 or 3 black neighbors, it stays black. If a black cell has less than 2 or more than 3 black neighbors it becomes white. If a white cell has 3 black neighbors, it becomes black... modelled after the real life phenomena of isolation, overcrowding and reproduction.
@@ -18,12 +20,16 @@ images/life_start_count.png
 {Rimages/lifenext.gif}
 Make a new grid for our next step and go through each square applying these rules marking the squares on the new grid:
 
+[pre]
 &nbsp;&nbsp;*if Square is alive then*
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 neighbour &rarr; dead cell (represents under-population)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 or 3 neighbours &rarr; live cell continues living
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3+ neighbours &rarr; dead cell (overcrowding)
+[/pre]
+[pre]
 &nbsp;&nbsp;*if Square is dead then*
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 neighbours &rarr; live cell (reproduction)
+[/pre]
 
 Repeat these instructions again to move to the third step. A small Python [http://github.com/genjix/lifesuite/blob/master/life.py|script] is provided for your amusement if you prefer reading source codes.
 

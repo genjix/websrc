@@ -35,10 +35,7 @@ if ($handle)
   {
     $buffer = trim(fgets($handle, 4096));
     $buf4utube = substr($buffer, 0, strlen($utube));
-    if ($buffer == "")
-    {
-    }
-    else if (!$title)
+    if (!$title)
     {
       $title = $buffer;
       //echo "<p>title = $title</p>";
@@ -75,13 +72,30 @@ if ($handle)
     {
       echo "<p><object class=\"youtube\" width=\"425\" height=\"344\"><param name=\"movie\" value=\"$buffer\"></param><param name=\"allowFullScreen\" value=\"true\"></param><param name=\"allowscriptaccess\" value=\"always\"></param><embed src=\"$buffer\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"425\" height=\"344\"></embed></object></p>";
     }
+    else if ($buffer == "[pre]")
+    {
+        $pre = true;
+        echo "<p>\n";
+    }
     else
     {
       $buffer = preg_replace('/\*([^]]+)\*/', '<b class="under">\\1</b>', $buffer);
       $buffer = preg_replace('/\\{[R]([^]]+)[.](.*)\}/U', '<a href="\1.\2" target="_blank"><img class="right" src="\1_thumb.\2" /></a>', $buffer);
       $buffer = preg_replace('/\\{([^]]+)[.](.*)\}/U', '<a href="\1.\2" target="_blank"><img src="\1_thumb.\2" /></a>', $buffer);
       $buffer = preg_replace('/\[([^]]+)\|([^]]+)\]/', '<a href="\\1">\\2</a>', $buffer);
-      echo "<p>$buffer</p>\n";
+      if ($pre) {
+          $buffer = trim($buffer);
+          if ($buffer == "[/pre]") {
+              $pre = false;
+              echo "</p>\n";
+          }
+          else if ($buffer == "")
+              echo "\n<p>\n";
+          else
+              echo "$buffer<br />\n";
+      }
+      else
+          echo "<p>$buffer</p>\n";
     }
   }
   fclose($handle);
